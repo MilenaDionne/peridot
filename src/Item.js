@@ -14,43 +14,38 @@ class Item extends Component {
         const { item, language } = this.props;
 
         return (
-            <div className="card img-fluid m-3" style={{ width: '18rem' }}>
-                <div className="text-left font-weight-bold">
-                    {item.name}
-                </div >
-                <div className="text-left">
-                    {item.adress}
-                </div >
-                <div className="text-left">
-                    {item.description}
-                </div >
-                <div className="row text-center">
-                    <span className="col">
-                        <img src="./icons/Type.png" alt="" className="img-fluid" style={{ width: '1rem' }} />
-                        <span className="" data-tip data-for={item.id + 'type'}>
-                            {item.type}
-                        </span>
-                    </span>
-
-
-                    <span className="col">
-                        <img src="./icons/Size.png" alt="" className="img-fluid" style={{ width: '1rem' }} />
-                        <span className="" data-tip data-for={item.id + 'size'}>{l(language, item.size)}</span>
-                    </span>
-
-                    <span className="col">
-                        <img src="./icons/dollarIcon.png" alt="" className="img-fluid" style={{ width: '1rem' }} />
-                        <span className="" data-tip data-for={item.id + 'cost'}>{item.cost}</span>
-                    </span>
-
+            <div className="card m-3" style={{ width: '100%' }}>
+                <div className="card-body card-title text-center">
+                    <div className="row font-weight-bold">
+                        <div>
+                            <img src={item.imgSrc} alt="" className="card-img" style={{ height: '40px' }} />
+                        </div>
+                        <div className="font-weight-bold ml-4">
+                            {item.name}
+                        </div>
+                    </div>
+                    <div className="row text-left font-italic">
+                        {item.adress}
+                    </div>
                 </div>
-                <button className="btn btn-dark " onClick={() => this.setState({ show: true })}>{l(language, 'MoreInformation')}</button>
-                <ReactTooltip id={item.id + 'size'}>{l(language, 'ItemSize')}</ReactTooltip>
+                
+                <span className="ml-1 font-weight-bold" data-tip data-for={item.id + 'type'}>
+                    {item.type}
+                </span>
+
+                <div className="ml-1 mt-2 text-left">
+                    {item.description}
+                </div>
+                <div className="row ml-1 mt-2">
+                    <p class="text-left">Salaire:</p>
+                    <span className="ml-1" data-tip data-for={item.id + 'cost'}>{item.cost} $</span>
+                </div>
+                <button className="float-right btn btn-dark" style={{ width: '10rem' }} onClick={() => this.setState({ show: true })}>{l(language, 'MoreInformation')} </button>
+                
                 <ReactTooltip id={item.id + 'cost'}>{l(language, 'ItemPrice')}</ReactTooltip>
                 <ReactTooltip id={item.id + 'type'}>{l(language, 'ItemType')}</ReactTooltip>
                 <ItemModalView
                     show={this.state.show}
-                    modalSize="lg"
                     item={item}
                     closeModal={this.closeModal}
                     language={language}

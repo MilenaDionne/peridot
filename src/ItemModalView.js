@@ -48,58 +48,33 @@ class ItemModalView extends Component {
                 onHide={closeModal}
                 onExit={closeModal}
             >
-                <ModalTitle className="text-center">
+                <ModalTitle className="text-left">
+                    <img src={item.imgSrc} alt="" className="img-fluid" style={{ height: '40px' }}/>
                     {item.name}
                     <button className="close mr-2" onClick={closeModal}>&times;</button>
+                    <div className='ml-1 font-italic' style={{fontSize: '15px'}}>
+                        {item.adress}
+                    </div>
                 </ModalTitle>
                 <ModalBody>
                     <div className="row">
-                        <div className="col-6">
-                            <img src={item.imgSrc} alt="" className="img-fluid" />
-                        </div>
-                        <div className="col-6">
-                            <table className="table text-center">
+                        <div>
+                            <table className="table text-left">
                                 <tbody>
                                     <tr>
-                                        <th className="pr-4" scope="row">
-                                            {l(language, 'ItemType')}
-                                            <img src="./icons/Type.png" alt="" className="img-fluid " style={{ width: '1.2rem' }} />
-                                        </th>
-                                        <td>{l(language, item.type)}</td>
-                                    </tr>
-                                    <tr>
-                                        <th className="pr-4" scope="row">
-                                            {l(language, 'ItemSize')}
-                                            <img src="./icons/Size.png" alt="" className="img-fluid ml-2" style={{ width: '1.2rem' }} />
-                                        </th>
-                                        <td>{l(language, item.size)}</td>
-                                    </tr>
-                                    <tr>
-                                        <th className="pr-4" scope="row">
-                                            {l(language, 'ItemPrice')}
-                                            <img src="./icons/dollarIcon.png" alt="" className="img-fluid ml-1" style={{ width: '1rem' }} />
-                                        </th>
-                                        <td>{item.cost}$</td>
-                                    </tr>
-
-                                    <tr>
-                                        <th className="pr-4" scope="row">
-                                            {l(language, 'ItemColor')}
-                                        </th>
-                                        <td>
-                                            <ul>
-                                                <li>{l(language, item.mainColor)}</li>
-                                                {item.secondaryColor ?
-                                                    <li>{l(language, item.secondaryColor)}</li>
-                                                    : ''}
-                                            </ul>
-                                        </td>
+                                        <th className="pr-8" >{item.type}</th>
                                     </tr>
                                     <tr>
                                         <th className="pr-4" scope="row"> {l(language, 'ItemDescription')}</th>
                                         <td>{item.description}</td>
                                     </tr>
-
+                                    <tr>
+                                    <th className="pr-4" scope="row">
+                                        {l(language, 'ItemPrice')}
+                                        <img src="./icons/dollarIcon.png" alt="" className="img-fluid ml-1" style={{ width: '1rem' }} />
+                                    </th>
+                                    <td>{item.cost}$</td>
+                                </tr>
                                 </tbody>
                             </table>
                         </div>

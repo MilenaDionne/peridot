@@ -36,9 +36,8 @@ class NewPost extends Component {
         var cost = document.getElementById('cost');
         var owneremail = document.getElementById('owneremail');
         var ownerphone = document.getElementById('ownerphone');
-        var mainColor = document.getElementById('mainColor');
         var agreement = document.getElementById('agreement');
-        if (size.value !== '' && type.value !== '' && agreement.checked === true && name.value !== '' && mainColor.value !== '' && cost.value !== '' && (owneremail.value !== '' || ownerphone !== '')) {
+        if (agreement.checked === true && name.value !== '' && cost.value !== '' && (owneremail.value !== '' || ownerphone !== '')) {
             bt.disabled = false;   // Enable the button.
 
         }
@@ -125,22 +124,27 @@ class NewPost extends Component {
                                         <div className="col-1"></div>
                                         <div className="col-6">
                                             <Form.Group as={Row} className="was-validated">
-                                                <Form.Label column sm="2">
+                                                <Form.Label column sm="3">
                                                     {l(language, 'Name')}
                                                 </Form.Label>
-                                                <Col sm="10">
+                                                <Col sm="9">
                                                     <Form.Control type="name" id="name" className="is-invalid" placeholder={l(language, 'Name')} onChange={this.handleChange} aria-describedby="validationServerUsernameFeedback" required />
                                                 </Col>
                                             </Form.Group>
+                                            <Form.Group as={Row}>
+                                                <Form.Label column sm="2">
+                                                    Address
+                                                </Form.Label>
+                                                <Col sm="10">
+                                                    <Form.Control type="adress" id="adress" onChange={this.handleChange} aria-describedby="validationServerUsernameFeedback" />
+                                                </Col>
+                                            </Form.Group>
                                             <Form.Group as={Row} className="was-validated">
-                                                <Form.Label column sm="4">
+                                                <Form.Label column sm="2">
                                                     {l(language, 'ItemType')}
                                                 </Form.Label>
-                                                <Col sm="8">
-                                                    <Form.Control as="select" id="type" className="my-1 mr-sm-2 is-invalid" custom onChange={this.handleChange} required>
-                                                        <option value=""> {l(language, 'SelectType')}</option>
-                                                        {clothsType}
-                                                    </Form.Control>
+                                                <Col sm="10">
+                                                    <Form.Control type="type" id="type" className="is-invalid" placeholder={l(language, 'SelectType')} onChange={this.handleChange} aria-describedby="validationServerUsernameFeedback" required />
                                                 </Col>
                                             </Form.Group>
                                             <Form.Group as={Row} className="was-validated">
@@ -151,36 +155,9 @@ class NewPost extends Component {
                                                     <Form.Control type="number" step="0.01" className="is-invalid" id="cost" placeholder={l(language, 'ItemPrice')} onChange={this.handleChange} required />
                                                 </Col>
                                             </Form.Group>
-                                            <Form.Group as={Row} className="was-validated">
-                                                <Form.Label column sm="2">
-                                                    {l(language, "ItemSize")}
-                                                </Form.Label>
-                                                <Col sm="10">
-                                                    <Form.Control as="select" id="size" className="my-1 mr-sm-2 is-invalid" custom onChange={this.handleChange} required>
-                                                        <option value="">{l(language, "ChooseSize")}</option>
-                                                        {clothsSize}
-                                                    </Form.Control>
-                                                </Col>
-                                            </Form.Group>
                                             <Form.Group>
                                                 <Form.Label>Description</Form.Label>
                                                 <Form.Control as="textarea" id="description" rows={3} onChange={this.handleChange} />
-                                            </Form.Group>
-                                            <Form.Group>
-                                                <Row>
-                                                    <Col className="was-validated">
-                                                        <Form.Control as="select" id="mainColor" className="my-1 mr-sm-2 is-invalid" custom onChange={this.handleChange} required>
-                                                            <option value=""> {l(language, "Color1")}</option>
-                                                            {valueColors}
-                                                        </Form.Control>
-                                                    </Col>
-                                                    <Col>
-                                                        <Form.Control as="select" id="secondaryColor" className="my-1 mr-sm-2" custom onChange={this.handleChange}>
-                                                            <option value="">{l(language, "Color2")}</option>
-                                                            {valueColors}
-                                                        </Form.Control>
-                                                    </Col>
-                                                </Row>
                                             </Form.Group>
                                         </div>
                                     </Form.Row>

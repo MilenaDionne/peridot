@@ -22,7 +22,7 @@ class PageTitle extends Component {
                 <Row>
                     <Col>
                         <div >
-                            <h1 className="text-center text-white" style={{height: '80px'}}>Trendy Apparel Trade</h1>
+                            <h1 className="text-center text-white" style={{height: '80px'}}>Peridot</h1>
                         </div>
                     </Col>
                 </Row> 

@@ -7,10 +7,6 @@ let strings = {
         en: 'Choose type...',
         fr: 'Choisir un type...'
     },
-    Color1: {
-        en: 'Main color...',
-        fr: 'Couleur principale...'
-    },
     Color2: {
         en: 'Second color...',
         fr: 'Deuxième couleur...'
@@ -20,8 +16,8 @@ let strings = {
         fr: "Créer offre d'emploi"
     },
     Name: {
-        en: 'Name',
-        fr: 'Nom'
+        en: 'Company name',
+        fr: 'Nom de la compagnie'
     },
     ItemSize: {
         en: 'Size',
@@ -32,8 +28,8 @@ let strings = {
         fr: 'ajouter image'
     },
     ItemPrice: {
-        en: 'Price',
-        fr: 'Prix'
+        en: 'Salary',
+        fr: 'Salaire'
     },
     MoreInformation: {
         en: 'More information',
@@ -72,8 +68,8 @@ let strings = {
         fr: 'Acceptez-vous de suivre nos termes et conditions?'
     },
     ItemType: {
-        en: 'Clothes type',
-        fr: 'Type de vêtements'
+        en: 'Job title',
+        fr: "Nom de l'emploi"
     },
     ItemHideOwnerInfo: {
         en: 'Hide information',
@@ -132,24 +128,24 @@ let strings = {
         'fr': 'Très très large'
     },
     Tops: {
-        'en': 'Tops',
-        'fr': 'Hauts'
+        'en': 'Nurse',
+        'fr': 'Infirmière'
     },
     Dresses: {
-        'en': 'Dresses',
-        'fr': 'Robes'
+        'en': 'Plumber',
+        'fr': 'Plombier'
     },
     Pants: {
-        'en': 'Pants',
-        'fr': 'Bas'
+        'en': 'Developer',
+        'fr': 'Developer'
     },
     Hats: {
-        'en': 'Hats',
-        'fr': 'Chapeaux'
+        'en': 'Teacher',
+        'fr': 'Enseignant'
     },
     Jewerly: {
-        'en': 'Jewerly',
-        'fr': 'Bijoux'
+        'en': 'Cops',
+        'fr': 'Policier'
     },
     ChooseSize: {
         'en': 'Choose size...',

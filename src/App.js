@@ -26,14 +26,12 @@ class App extends Component {
       {
         id: 1,
         name: 'Company 1',
-        imgSrc: '../images/Biking-Shirt_T-Shirt_M_Blue_None_30_JL.jpg',
+        imgSrc: '../images/building-on-crescent-4303ld.png',
         adress: '3256 route nowhere',
         cost: 50,
         size: this.size.M,
-        type: 'Tops',
-        mainColor: 'Blue',
-        secondaryColor: 'Blue',
-        description: 'Perfect T-Shirt for biking',
+        type: 'Software Developer',
+        description: 'Slack is looking for a Software Engineer for the Developer Productivity team, a group of engineers who design and build tools and solutions that will give our engineers greater control over internal systems while improving their ability to deliver software in a sustainable manner, quickly. This team will be taking on greenfield projects while working to improve the long term sustainability of Slack’s engineering model. Software Engineers at Slack work in a highly collaborative environment, and that is particularly true within Developer Productivity where we are passionate about improving the working lives of our fellow engineers across the company. One size does not fit all so please bring your bag of tricks and ability to teach them to others.',
 
         ownername: 'JL',
         owneremail: 'fakeemail@gmail.com',
@@ -41,14 +39,12 @@ class App extends Component {
       }, {
         id: 2,
         name: 'Company 2',
-        imgSrc: '../images/pinkshirt.jpg',
+        imgSrc: '../images/abstract-cuboid-building-4519ld.png',
         adress: '3256 route nowhere',
         cost: 40,
         size: this.size.S,
-        type: 'Tops',
-        mainColor: 'Pink',
-        secondaryColor: 'Pink',
-        description: 'Confy shirt',
+        type: 'System Engineer',
+        description: "Nous sommes présentement à la recherche d'un Développeur Java pour un contrat d'une durée de 6 mois avec possibilité de renouvellement",
 
         ownername: 'JL',
         owneremail: 'fakeemail@gmail.com',
@@ -58,14 +54,12 @@ class App extends Component {
       {
         id: 3,
         name: 'Company 3',
-        imgSrc: '../images/redpants.jfif',
+        imgSrc: '../images/1626068668-181804171260ebd6bcf116b5-27635942-500x500.jpg',
         adress: '3256 route nowhere',
         cost: 40,
         size: this.size.L,
-        type: 'Pants',
-        mainColor: 'Red',
-        secondaryColor: 'Red',
-        description: 'Normal pants',
+        type: 'Web Designer',
+        description: 'Slack is looking for a Software Engineer for the Developer Productivity team, a group of engineers who design and build tools and solutions that will give our engineers greater control over internal systems while improving their ability to deliver software in a sustainable manner, quickly. This team will be taking on greenfield projects while working to improve the long term sustainability of Slack’s engineering model. Software Engineers at Slack work in a highly collaborative environment, and that is particularly true within Developer Productivity where we are passionate about improving the working lives of our fellow engineers across the company. One size does not fit all so please bring your bag of tricks and ability to teach them to others.',
 
         ownername: 'JL',
         owneremail: 'fakeemail@gmail.com',
@@ -173,7 +167,7 @@ class App extends Component {
       wordsArray = []
       var query = this.state.searchQuery.split(' ');
 
-      var searchKeys = ['name', 'size', 'type', 'mainColor', 'secondaryColor', 'ownername']
+      var searchKeys = ['name', 'size', 'type', 'ownername']
       query.forEach(word => {
         list.forEach(item => {
           var valid = false;
@@ -204,7 +198,7 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar bg="dark" className="py-3">
-          <Navbar.Brand className="text-white"><img style={{ width: '40px' }} src='../icons/tunic.png' alt="Trendy Apparel Trade"></img>&nbsp; Trendy Apparel Trade</Navbar.Brand>
+          <Navbar.Brand className="text-white"><img style={{ width: '40px' }} src='../icons/tunic.png' alt="Peridot"></img>&nbsp; Peridot</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Col xs={2}>
@@ -222,13 +216,7 @@ class App extends Component {
           </Navbar.Collapse>
         </Navbar>
         <Row>
-          <Col className="bg-white ml-1">
-            <h5 className="border-bottom border-dark p-1"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-filter" viewBox="0 0 16 16">
-              <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z" />
-            </svg> {l(this.state.language, 'FilterBy')}</h5>
-            <FilterContainer filters={this.state.filters} getFilter={this.getFilters} removeFilters={this.removeFilters} language={this.state.language}></FilterContainer>
-          </Col>
-          <Col xs={10}>
+          <Col>
             <br></br>
             {<ItemsContainer items={this.state.resultList} language={this.state.language} sizes={this.size}></ItemsContainer>}
           </Col>

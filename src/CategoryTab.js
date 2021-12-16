@@ -15,16 +15,6 @@ class CategoryTab extends Component {
         return () => {
             <div style="margin-top:100px">
                <p style="font-size:24px; color:white; background-color:black; width: 200px">Filters:</p>
-              <form>
-                <label for="size">Filter by size:</label>
-                    <select name="sizes" id="sizes">
-                        <option value="extra small">extra small</option>
-                        <option value="small">small</option>
-                        <option value="medium">medium</option>
-                        <option value="large">large</option>
-                        <option value="extra large">extra large</option>
-                     </select>   
-             </form>
              <br></br>
              <form>
                 <label for="price">Filter by price:</label>
